@@ -7,6 +7,7 @@ const EQS_TYPES = [
 var correct_answer = 0
 var score = 0
 let animatecount = 0
+function score_save(){
 if (localStorage.score != "NaN"){
     score = parseInt(localStorage.score)
     document.getElementById("score").innerHTML = score.toString()
@@ -19,7 +20,8 @@ else{
     document.getElementById("score").innerHTML = score.toString()
     window.location.reload()
 }
-
+}
+score_save()
 function generate(type){
     if (type == 1) {
         let y = Math.floor(Math.random() *10 )
