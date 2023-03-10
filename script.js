@@ -8,17 +8,15 @@ var correct_answer = 0
 var score = 0
 let animatecount = 0
 function score_save(){
-if (localStorage.score != "NaN"){
+if (localStorage.score !== "NaN"){
     score = parseInt(localStorage.score)
     document.getElementById("score").innerHTML = score.toString()
     
 }
 else{
     score = 0
-    
     localStorage.score = score
     document.getElementById("score").innerHTML = score.toString()
-    window.location.reload()
 }
 }
 score_save()
