@@ -14,8 +14,10 @@ if (localStorage.score != "NaN"){
 }
 else{
     score = 0
+    
     localStorage.score = score
     document.getElementById("score").innerHTML = score.toString()
+    window.location.reload()
 }
 
 function generate(type){
