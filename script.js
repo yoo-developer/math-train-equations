@@ -69,7 +69,12 @@ function generate(type){
     }
 }
 let eq_txt = document.getElementById("equation_txt")
+    if (document.getElementById("score").innerHTML == "NaN"){
+        localStorage.score = score
+        window.location.reload();
+    }
 function gen_eq_type(){   
+
     generate(Math.floor(Math.random() * (EQS_TYPES.length)))
 }
 function check(){
