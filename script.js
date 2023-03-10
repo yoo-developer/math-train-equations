@@ -70,24 +70,9 @@ let eq_txt = document.getElementById("equation_txt")
 function gen_eq_type(){   
     generate(Math.floor(Math.random() * (EQS_TYPES.length)))
 }
-function notification(txt){
-    let notf = document.getElementById("notf")
-    notf.innerHTML = txt
-    id = null
-    notf.style.opacity = 1
-    function myMove() {
-
-        notf.style.transition = "0s"
-        notf.style.opacity = 1
-        notf.style.transition = "1s"
-        notf.style.opacity = 0
-    }
-    myMove()
-}
 function check(){
     const answer = document.getElementById("answer").value 
     if (answer == correct_answer){
-        notification("Congratulation! , Answer Is Correct.")
         gen_eq_type()
         let s = document.getElementById("score")
         s.style.animation = "correct 1s"
@@ -95,7 +80,6 @@ function check(){
         localStorage.score = score;
     }
     else{
-       notification("Unfortunatly, Your Answer Was Not Correct.")
         let s = document.getElementById("score")
         s.style.animation = "wrong 1s"
         animatecount = animatecount + 1
