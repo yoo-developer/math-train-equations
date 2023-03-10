@@ -7,8 +7,7 @@ const EQS_TYPES = [
 var correct_answer = 0
 var score = parseInt(localStorage.score)
 localStorage.score = score
-function score_save(){
-if (localStorage.score !== "NaN"){
+if (localStorage.score != "NaN"){
     score = parseInt(localStorage.score)
     document.getElementById("score").innerHTML = score.toString()
     
@@ -18,8 +17,7 @@ else{
     localStorage.score = score
     document.getElementById("score").innerHTML = score.toString()
 }
-}
-score_save()
+
 function generate(type){
     if (type == 1) {
         let y = Math.floor(Math.random() *10 )
@@ -69,13 +67,22 @@ function generate(type){
     }
 }
 let eq_txt = document.getElementById("equation_txt")
-    if (document.getElementById("score").innerHTML == "NaN"){
-        localStorage.score = score
-        window.location.reload();
-    }
 function gen_eq_type(){   
-
     generate(Math.floor(Math.random() * (EQS_TYPES.length)))
+}
+function notification(txt){
+    let notf = document.getElementById("notf")
+    notf.innerHTML = txt
+    id = null
+    notf.style.opacity = 1
+    function myMove() {
+
+        notf.style.transition = "0s"
+        notf.style.opacity = 1
+        notf.style.transition = "1s"
+        notf.style.opacity = 0
+    }
+    myMove()
 }
 function check(){
     const answer = document.getElementById("answer").value 
@@ -96,3 +103,4 @@ function check(){
     document.getElementById("score").innerHTML = score.toString()
 }
 gen_eq_type()
+
