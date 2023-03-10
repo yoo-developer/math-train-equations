@@ -106,14 +106,16 @@ b{
         background-color: rgba(0, 0, 0, 0.329);
     }
 }
-#notf{
-    position: absolute;
-    bottom: 10%;
-    left: 50%;
-    transform: translate(-50%);
-    
-}
 h1{
     padding: 10px;
     font-size: 3.5vmin;
 }
+.credits{
+    position:absolute;
+    bottom:0%;
+    right:0%;
+    transform:translate(-100);
+    padding:25px;
+    font-weight:bold;
+}
+    
