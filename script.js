@@ -5,8 +5,8 @@ const EQS_TYPES = [
     "eq4" 
 ]
 var correct_answer = 0
-var score = 0
-let animatecount = 0
+var score = parseInt(localStorage.score)
+localStorage.score = score
 function score_save(){
 if (localStorage.score !== "NaN"){
     score = parseInt(localStorage.score)
